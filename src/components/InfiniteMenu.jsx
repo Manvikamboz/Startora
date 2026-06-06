@@ -674,10 +674,28 @@ class InfiniteGridMenu {
       this.discBuffers.indices
     );
 
-    this.icoGeo = new IcosahedronGeometry();
-    this.icoGeo.subdivide(1).spherize(this.SPHERE_RADIUS);
-    this.instancePositions = this.icoGeo.vertices.map(v => v.position);
-    this.DISC_INSTANCE_COUNT = this.icoGeo.vertices.length;
+    const N = Math.max(1, this.items.length);
+    this.instancePositions = [];
+    const phi = Math.PI * (Math.sqrt(5) - 1); // golden angle in radians
+
+    for (let i = 0; i < N; i++) {
+      const y = 1 - (i / (N - 1)) * 2; // y goes from 1 to -1
+      const radius = Math.sqrt(1 - y * y); // radius at y
+
+      const theta = phi * i; // golden angle increment
+
+      const x = Math.cos(theta) * radius;
+      const z = Math.sin(theta) * radius;
+
+      this.instancePositions.push(
+        vec3.fromValues(
+          x * this.SPHERE_RADIUS,
+          y * this.SPHERE_RADIUS,
+          z * this.SPHERE_RADIUS
+        )
+      );
+    }
+    this.DISC_INSTANCE_COUNT = N;
     this.#initDiscInstances(this.DISC_INSTANCE_COUNT);
 
     this.worldMatrix = mat4.create();

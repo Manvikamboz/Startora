@@ -71,28 +71,184 @@ export default function App() {
 
   const networkItems = [
     {
-      image: '/hub_sv.png',
+      image: '/sector_agritech.jpg',
       link: '#',
-      title: 'Silicon Valley',
-      description: 'Stanford, UC Berkeley & local innovators matching code & building fast.'
+      title: 'Agritech & Plant Science',
+      description: 'Smart irrigation, crop health monitoring, and precision agriculture innovations.'
     },
     {
-      image: '/hub_london.png',
+      image: '/sector_electronics.jpg',
       link: '#',
-      title: 'London Tech',
-      description: 'Imperial, Oxford & Cambridge talent running decentralized research.'
+      title: 'Hardware & Electronics',
+      description: 'Next-gen microcontrollers, embedded IoT sensors, and high-performance robotics.'
     },
     {
-      image: '/hub_bangalore.png',
+      image: '/sector_trading.jpg',
       link: '#',
-      title: 'Bengaluru Hub',
-      description: 'IITs & BITS pioneers driving next-gen Web3 scaling and DeFi.'
+      title: 'FinTech & Trading',
+      description: 'Decentralized orderbooks, algorithmic micro-trading, and automated smart liquidity.'
     },
     {
-      image: '/hub_tokyo.png',
+      image: '/sector_education.jpg',
       link: '#',
-      title: 'Tokyo Innovation',
-      description: 'Todai developers building immersive AI interfaces and VR protocols.'
+      title: 'EdTech & Digital Learning',
+      description: 'AI tutors, peer-to-peer coding sandboxes, and virtual classroom technologies.'
+    },
+    {
+      image: '/sector_biotech.jpg',
+      link: '#',
+      title: 'Biotech & Health Science',
+      description: 'DNA sequencing, digital health sensors, and automated smart diagnostic tools.'
+    },
+    {
+      image: '/sector_energy.jpg',
+      link: '#',
+      title: 'Clean Energy & Solar',
+      description: 'Grid-level solar storage, battery density management, and smart smart-grids.'
+    },
+    {
+      image: '/sector_aerospace.jpg',
+      link: '#',
+      title: 'Aerospace & Drone Tech',
+      description: 'Micro-satellite telemetry, automated delivery drone routing, and avionics controllers.'
+    },
+    {
+      image: '/sector_cybersecurity.jpg',
+      link: '#',
+      title: 'Cybersecurity & Crypto',
+      description: 'Zero-knowledge proofs, hardware-encrypted keys, and automated penetration testing.'
+    },
+    {
+      image: '/sector_ai.jpg',
+      link: '#',
+      title: 'AI & Machine Learning',
+      description: 'Neural networks, autonomous decision models, and generative agent pipelines.'
+    },
+    {
+      image: '/sector_vr.jpg',
+      link: '#',
+      title: 'AR/VR & Spatial Computing',
+      description: 'Virtual immersive workspaces, spatial interface designs, and real-time environment rendering.'
+    },
+    {
+      image: '/sector_robotics.jpg',
+      link: '#',
+      title: 'Robotics & Automation',
+      description: 'Assembly arm controllers, hardware kinematics, and autonomous warehouse fleets.'
+    },
+    {
+      image: '/sector_blockchain.jpg',
+      link: '#',
+      title: 'Web3 & Decentralized Ledger',
+      description: 'Smart contract sandboxes, cross-chain bridge relays, and distributed validator consensus.'
+    },
+    {
+      image: '/sector_ecommerce.jpg',
+      link: '#',
+      title: 'E-Commerce & Retail',
+      description: 'Headless checkout pipelines, augmented reality try-ons, and dynamic inventory matching.'
+    },
+    {
+      image: '/sector_logistics.jpg',
+      link: '#',
+      title: 'Logistics & Supply Chain',
+      description: 'Autonomous freight matching, last-mile drone delivery hubs, and blockchain shipping logs.'
+    },
+    {
+      image: '/sector_foodtech.jpg',
+      link: '#',
+      title: 'FoodTech & Gastronomy',
+      description: 'Alternative protein formulations, smart commercial kitchen systems, and automated supply chains.'
+    },
+    {
+      image: '/sector_mobility.jpg',
+      link: '#',
+      title: 'Mobility & Smart Cities',
+      description: 'Electric vehicle charging grids, urban traffic sensor algorithms, and autonomous ride sharing.'
+    },
+    {
+      image: '/sector_proptech.jpg',
+      link: '#',
+      title: 'PropTech & Real Estate',
+      description: 'Smart building occupancy sensors, decentralized home equity tokens, and automated listing engines.'
+    },
+    {
+      image: '/sector_cretech.jpg',
+      link: '#',
+      title: 'CreTech & Media',
+      description: 'Real-time collaborative video suites, AI music generation tools, and decentralised licensing.'
+    },
+    {
+      image: '/sector_govtech.jpg',
+      link: '#',
+      title: 'GovTech & Civic Action',
+      description: 'Cryptographically secure e-voting, open municipal database nodes, and local citizen hubs.'
+    },
+    {
+      image: '/sector_insuretech.jpg',
+      link: '#',
+      title: 'InsureTech & Risk',
+      description: 'Real-time smart contract parametric insurances, telemetry driving records, and fraud detection.'
+    },
+    {
+      image: '/sector_adtech.jpg',
+      link: '#',
+      title: 'AdTech & Marketing Tech',
+      description: 'Hyper-personalized ad bidding, privacy-safe tracking SDKs, and dynamic creator attribution.'
+    },
+    {
+      image: '/sector_traveltech.jpg',
+      link: '#',
+      title: 'TravelTech & Hospitality',
+      description: 'Generative travel itinerary engines, automated room inventory matching, and smart luggage logs.'
+    },
+    {
+      image: '/sector_pettech.jpg',
+      link: '#',
+      title: 'PetTech & Veterinary',
+      description: 'Smart activity collar monitors, automated vet scheduling, and raw dietary formulating engines.'
+    },
+    {
+      image: '/sector_legaltech.jpg',
+      link: '#',
+      title: 'LegalTech & Regulatory',
+      description: 'Cryptographic document notarization, AI contract compliance checking, and patent audit logs.'
+    },
+    {
+      image: '/sector_hrtech.jpg',
+      link: '#',
+      title: 'HRTech & Recruiting',
+      description: 'Algorithmic matching, virtual remote onboarding sandboxes, and token-weighted referrals.'
+    },
+    {
+      image: '/sector_healthtech.jpg',
+      link: '#',
+      title: 'HealthTech & Patient Care',
+      description: 'Telehealth coordination links, cryptographically sealed medical histories, and diagnostics.'
+    },
+    {
+      image: '/sector_sportstech.jpg',
+      link: '#',
+      title: 'SportsTech & Athletics',
+      description: 'Computer-vision kinematic trackers, wearable sensor relays, and automated athletic stat dashboards.'
+    },
+    {
+      image: '/sector_climatetech.jpg',
+      link: '#',
+      title: 'ClimateTech & Green Finance',
+      description: 'Carbon credit ledger tracking, supply chain emissions estimators, and smart reforestation monitoring.'
+    },
+    {
+      image: '/sector_spacetech.jpg',
+      link: '#',
+      title: 'SpaceTech & Exploration',
+      description: 'Launch telemetry monitors, payload weight allocation systems, and orbit collision avoidance.'
+    },
+    {
+      image: '/sector_nanotech.jpg',
+      link: '#',
+      title: 'NanoTech & Advanced Materials',
+      description: 'Carbon nanotube lattices, molecular design simulations, and automated material strength models.'
     }
   ];
 
