@@ -38,10 +38,7 @@ export default function App() {
   const [showSplash, setShowSplash] = useState(true);
   const [isSplashMounted, setIsSplashMounted] = useState(true);
 
-  const [isWaitlistSubmitted, setIsWaitlistSubmitted] = useState(false);
-  const [waitlistEmail, setWaitlistEmail] = useState('');
 
-  const [showArchitecture, setShowArchitecture] = useState(false);
   const [communityTab, setCommunityTab] = useState('constellation');
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
 
@@ -272,12 +269,7 @@ export default function App() {
     {
       label: 'System Flow',
       icon: <Cpu className="w-5 h-5" />,
-      onClick: () => {
-        setShowArchitecture(true);
-        setTimeout(() => {
-          document.getElementById('architecture')?.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }
+      onClick: () => document.getElementById('architecture')?.scrollIntoView({ behavior: 'smooth' })
     },
 
     {
@@ -355,12 +347,7 @@ export default function App() {
         </p>
         <div className="hero-cta">
           <button
-            onClick={() => {
-              setShowArchitecture(true);
-              setTimeout(() => {
-                document.getElementById('architecture')?.scrollIntoView({ behavior: 'smooth' });
-              }, 100);
-            }}
+            onClick={() => document.getElementById('architecture')?.scrollIntoView({ behavior: 'smooth' })}
             className="btn-primary cursor-target"
           >
             Explore Architecture <Play className="w-4 h-4 fill-white" />
@@ -470,53 +457,26 @@ export default function App() {
         </div>
       </section>
 
-      {/* System Flow Diagram Section */}
-      {!showArchitecture ? (
-        <section className="dev-cta-section" style={{ minHeight: 'auto', padding: '60px 24px', scrollSnapAlign: 'start', scrollMarginTop: '80px' }}>
-          <div className="dev-cta-container glass" style={{ margin: '0 auto', padding: '40px', maxWidth: '900px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px', textAlign: 'left' }}>
-            <div style={{ flex: '1 1 500px' }}>
-              <div className="developer-badge" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(6, 182, 212, 0.08)', border: '1px solid rgba(6, 182, 212, 0.25)', color: 'var(--neon-teal)', padding: '4px 10px', borderRadius: '99px', fontSize: '10px', fontWeight: '600', textTransform: 'uppercase', marginBottom: '12px' }}>
-                <Cpu className="w-3 h-3" /> Developer Hub
-              </div>
-              <h3 style={{ fontSize: '22px', fontWeight: '700', color: '#fff', marginBottom: '8px' }}>Explore Our Architecture</h3>
-              <p style={{ fontSize: '15px', color: 'rgba(255, 255, 255, 0.7)', lineHeight: '1.5' }}>Discover the technical design: how AI feasibility grading, local blockchain registries, and governance models connect across Launchpad Labs.</p>
-            </div>
-            <button
-              onClick={() => {
-                setShowArchitecture(true);
-                setTimeout(() => {
-                  document.getElementById('architecture')?.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
-              }}
-              className="btn-primary cursor-target"
-              style={{ whiteSpace: 'nowrap' }}
-            >
-              Check System Architecture <Cpu className="w-4 h-4" />
-            </button>
-          </div>
-        </section>
-      ) : (
-        <section id="architecture" className="arch-section" style={{ animation: 'scaleUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards' }}>
-          <div className="section-header">
-            <h2 className="section-title">System Architecture</h2>
-            <p className="section-description">How frontend inputs integrate with our distributed servers, AI networks, and smart contracts.</p>
-          </div>
+      <section id="architecture" className="arch-section">
+        <div className="section-header">
+          <h2 className="section-title">System Architecture</h2>
+          <p className="section-description">How frontend inputs integrate with our distributed servers, AI networks, and smart contracts.</p>
+        </div>
 
-          <MagicBento
-            textAutoHide={true}
-            enableStars={true}
-            enableSpotlight={true}
-            enableBorderGlow={true}
-            enableTilt={false}
-            enableMagnetism={false}
-            clickEffect={true}
-            spotlightRadius={400}
-            particleCount={12}
-            glowColor="139, 92, 246"
-            disableAnimations={false}
-          />
-        </section>
-      )}
+        <MagicBento
+          textAutoHide={true}
+          enableStars={true}
+          enableSpotlight={true}
+          enableBorderGlow={true}
+          enableTilt={false}
+          enableMagnetism={false}
+          clickEffect={true}
+          spotlightRadius={400}
+          particleCount={12}
+          glowColor="139, 92, 246"
+          disableAnimations={false}
+        />
+      </section>
 
 
       {/* Open Source Hub Section */}
@@ -554,65 +514,7 @@ export default function App() {
           {communityTab === 'terminal' && <TerminalSimulator />}
           {communityTab === 'dao' && <DaoProposalSim />}
         </div>
-      </section>
-
-
-      {/* What's Next Section */}
-      <section id="whats-next" className="whats-next-section">
-        <div className="section-header">
-          <h2 className="section-title text-gradient">Be Part of What&apos;s Next</h2>
-          <p className="section-description">What&apos;s Next</p>
-        </div>
-
-        <div className="whats-next-content glass">
-          <div className="whats-next-badge">
-            <Sparkles className="w-3 h-3" /> Coming Soon
-          </div>
-          <h3 className="whats-next-heading">Shape the Future of Student Startups</h3>
-          <p className="whats-next-text">
-            We are building a trustless, decentralized workspace for elite university builders. Get notified when we launch, get access to early developer testnets, and connect with global builders.
-          </p>
-
-          {isWaitlistSubmitted ? (
-            <div className="waitlist-success" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', animation: 'scaleUp 0.5s ease-out' }}>
-              <CheckCircle2 className="w-12 h-12 text-cyan-400 mb-4" />
-              <h3 className="whats-next-heading">You&apos;re on the list!</h3>
-              <p className="whats-next-text" style={{ marginTop: '8px' }}>
-                Thank you for joining. We&apos;ve registered your address (<strong>{waitlistEmail}</strong>) and will notify you as soon as early access opens.
-              </p>
-            </div>
-          ) : (
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                setIsWaitlistSubmitted(true);
-              }}
-              className="waitlist-form"
-            >
-              <div className="waitlist-input-container">
-                <Mail className="waitlist-icon w-5 h-5" />
-                <input
-                  type="email"
-                  value={waitlistEmail}
-                  onChange={(e) => setWaitlistEmail(e.target.value)}
-                  placeholder="Enter your university email address"
-                  required
-                  className="waitlist-input"
-                />
-              </div>
-              <button type="submit" className="btn-primary cursor-target waitlist-submit">
-                Join Waitlist <Send className="w-4 h-4" />
-              </button>
-            </form>
-          )}
-        </div>
-
-
-      </section>
-
-
-
-      {/* Footer */}
+      </section>      {/* Footer */}
       <footer className="footer">
         <div className="footer-logo">
           <Rocket className="w-5 h-5 text-cyan-400" />
@@ -623,7 +525,6 @@ export default function App() {
           <a href="#network" className="footer-link">Network</a>
           <a href="#sandbox" className="footer-link">Sandbox</a>
           <a href="#architecture" className="footer-link">System Flow</a>
-          <a href="#whats-next" className="footer-link">What's Next</a>
         </div>
         <p>© 2026 Startora. All right reserved.</p>
       </footer>

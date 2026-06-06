@@ -23,7 +23,8 @@ Startora is a decentralized, high-performance web dashboard designed to bridge u
 - **🧠 FastAPI AI Microservice:** Implements intelligent NLP-based cosine similarity algorithms and automated business plan feasibility metrics to evaluate startup viability.
 - **⛓️ Polygon Smart Contract Registry:** Cryptographically seals ideas by posting SHA-256 fingerprints on-chain for secure, decentralized ownership verification.
 - **🗳️ DAO Consensus voting:** A token-weighted consensus sandbox where community upgrades and features are proposed and voted on democratically.
-- **🌐 3D Interactive Ecosystem Menu:** A hardware-accelerated WebGL rotating sphere showing builder networks across Silicon Valley, London, Bengaluru, Tokyo, and more.
+- **🌐 3D Interactive Ecosystem Menu:** A hardware-accelerated WebGL rotating sphere using a **Fibonacci Sphere Distribution Algorithm** to display **30 completely unique startup categories** (with high-quality photography and dynamic scaling) mapping 1-to-1 to custom orbital nodes.
+- **🛠️ Direct System Architecture:** Interactive, glassmorphic system diagrams immediately visible on the platform to map developer flows, database synchronizations, and server connections.
 - **💻 Interactive Developer Sandbox:** Live-streamed repository logs and a custom Git-like console shell to simulate development workflows in real-time.
 
 ---
